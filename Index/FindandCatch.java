@@ -22,6 +22,7 @@ public class FindandCatch {
     }
     public static void Union(int x, int y, int[] father, int[] rank) {
         int fx = Find(x, father, rank), fy = Find(y, father, rank);
+	if (fx == fy) return ;
         father[fx] = fy;
         rank[fx] = (rank[x] + rank[y] + 1) % 2;
     }
