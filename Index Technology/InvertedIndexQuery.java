@@ -43,14 +43,13 @@ public class InvertedIndexQuery {
                 index[i][j] = scan.nextInt();
         }
         int queryCnt = scan.nextInt();
-        String[] str = new String[len];
+        int[] query = new int[len];
         while (queryCnt-- > 0) {
-            int[] query = new int[len];
+            System.out.println(query.length + " ");
             int temp = 0;
-            for (int i =0; i < len; i++) {
-                int in = scan.nextInt();
-                System.out.print(in + " ");
-                query[i] = in;
+            int i = 0;
+            for (; i < len; i++) {
+                query[i] = scan.nextInt();
                 if (query[i] == 1) temp = i;
             }
             System.out.println(query.length);
@@ -67,9 +66,9 @@ public class InvertedIndexQuery {
             if (result[len-1] < 0)
                 System.out.println("NOT FOUND");
             else {
-                for (int i = 0; i < len-1; i++) {
+                for (int j = 0; j < len-1; j++) {
                     if (result[i] >= 0)
-                        System.out.print(result[i] + " ");
+                        System.out.print(result[j] + " ");
                 }
                 System.out.println(result[len-1]);
             }
